@@ -126,6 +126,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.camcorder.disablemeta=1
 
 #PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.hardware.respect_als=true
+    ro.hardware.respect_als=true
 
 #    debug.mdpcomp.maxlayer=3 \

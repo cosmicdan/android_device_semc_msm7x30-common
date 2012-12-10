@@ -87,7 +87,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/semc/msm7x30-common/releasetools/semc_ota_from_target_files
 
 # Light Sensor
-#BOARD_SYSFS_LIGHT_SENSOR := /sys/class/leds/lcd-backlight/als/enable
+BOARD_SYSFS_LIGHT_SENSOR := /sys/class/leds/lcd-backlight/als/enable
 
 #Jellyzeus
 BOARD_USES_AUDIO_LEGACY := true
