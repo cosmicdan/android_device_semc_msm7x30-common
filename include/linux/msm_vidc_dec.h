@@ -83,8 +83,8 @@
 #define VDEC_IOCTL_MAGIC 'v'
 
 struct vdec_ioctl_msg {
-	void __user *in;
-	void __user *out;
+	void *in;
+	void *out;
 };
 
 /* CMD params: InputParam:enum vdec_codec
@@ -237,7 +237,7 @@ struct vdec_allocatorproperty {
 };
 
 struct vdec_bufferpayload {
-	void __user *bufferaddr;
+	void *bufferaddr;
 	size_t buffer_len;
 	int pmem_fd;
 	size_t offset;
@@ -487,19 +487,19 @@ struct vdec_picsize {
 };
 
 struct vdec_seqheader {
-	void __user *ptr_seqheader;
+	void *ptr_seqheader;
 	size_t seq_header_len;
 	int pmem_fd;
 	size_t pmem_offset;
 };
 
 struct vdec_mberror {
-	void __user *ptr_errormap;
+	void *ptr_errormap;
 	size_t err_mapsize;
 };
 
 struct vdec_input_frameinfo {
-	void __user *bufferaddr;
+	void *bufferaddr;
 	size_t offset;
 	size_t datalen;
 	uint32_t flags;
@@ -507,7 +507,7 @@ struct vdec_input_frameinfo {
 	void *client_data;
 	int pmem_fd;
 	size_t pmem_offset;
-	void __user *desc_addr;
+	void *desc_addr;
 	uint32_t desc_size;
 };
 
@@ -525,7 +525,7 @@ struct vdec_aspectratioinfo {
 };
 
 struct vdec_output_frameinfo {
-	void __user *bufferaddr;
+	void *bufferaddr;
 	size_t offset;
 	size_t len;
 	uint32_t flags;
@@ -535,7 +535,7 @@ struct vdec_output_frameinfo {
 	void *input_frame_clientdata;
 	struct vdec_framesize framesize;
 	enum vdec_interlaced_format interlaced_format;
-       struct vdec_aspectratioinfo aspect_ratio_info;
+        struct vdec_aspectratioinfo aspect_ratio_info;
 };
 
 union vdec_msgdata {

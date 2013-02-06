@@ -21,8 +21,6 @@ DEVICE_PACKAGE_OVERLAYS += device/semc/msm7x30-common/overlay
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
-#recovery resources
-$(call inherit-product, device/semc/msm7x30-common/recovery/recovery.mk)
 
 PRODUCT_MANUFACTURER := Sony
 
@@ -39,6 +37,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+
 
 PRODUCT_COPY_FILES += \
     device/semc/msm7x30-common/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
@@ -122,10 +121,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     hwui.disable_vsync=true \
     debug.mdpcomp.logs=0 \
     BUILD_UTC_DATE=0 \
-    persist.sys.usb.config=mass_storage \
+    persist.sys.usb.config=mass_storage,adb \
     debug.camcorder.disablemeta=1
 
-#PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.respect_als=true
 
 #    debug.mdpcomp.maxlayer=3 \
